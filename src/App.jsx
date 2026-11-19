@@ -1,5 +1,5 @@
 import About from "./Components/About/About"
-import ForgotPassword from "./Components/ForgotPassword/ForgotPassword"
+
 import HomePage from "./Components/HomePage/HomePage"
 import Register from "./Components/Register/Register"
 import Login from "./Components/Login/Login"
@@ -36,7 +36,7 @@ function App(){
         <Route path="/currency" element={<Currency/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/tasks" element={<Task/>}/>
-        <Route path="/forgotpassword" element={<ForgotPassword/>}/>
+        
         <Route path="*" element={<Errorpage/>}/>
       </Routes>
     <Footer />
