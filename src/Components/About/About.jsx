@@ -1,4 +1,4 @@
-1import polykitsuit from "../../assets/polykit-suit-removebg.png"
+import polykitsuit from "../../assets/polykit-suit-removebg.png"
 import logo from "../../assets/polykit-removebg.png"
 
 import "./About.css"
