@@ -1,0 +1,70 @@
+.errorpage {
+    width: 100vw;
+    height: 100vh;
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error-text-con {
+    padding: 0.3rem;
+    background: rgb(228, 226, 226);
+    border-radius: 1rem;
+}
+
+.errorpage h2 {
+    text-align: center;
+    width: auto;
+}
+
+.errorpage .main-text {
+    max-width: 500px;
+    text-align: center;
+}
+
+.errorpage .error-btn {
+    width: 200px;
+    height: 2.5rem;
+    background: green;
+    color: greenyellow;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: 0.5s ease-in-out;
+}
+
+.errorpage .error-btn:hover {
+    background: greenyellow;
+    color: green;
+}
+
+.errorpage .small-note {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+@media(max-width:600px) {
+    .errorpage {
+        max-width: 600px;
+
+    }
+
+    .errorpage .main-text {
+        font-size: 0.9rem;
+        max-width: 300px;
+    }
+
+    .errorpage h2 {
+        max-width: 350px;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    .errorpage .error-btn {
+        margin-bottom: 0.5rem;
+    }
+
+}

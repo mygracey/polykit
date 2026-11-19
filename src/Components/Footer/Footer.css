@@ -1,0 +1,25 @@
+.footer{
+    width:100vw;
+    height:4rem;
+    background:var(--navbar-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:0.8rem;
+    color:greenyellow;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Mobile Responsiveness*/
+
+
+@media(max-width:600px){
+    .footer{
+        max-width:600px;
+    }
+    .footer p{
+        max-width:300px;
+        text-align:center;
+    }
+}

@@ -1,0 +1,68 @@
+import {useState} from "react"
+import logo from "../../assets/polykit-removebg.png"
+
+import "./Bmi.css"
+
+function BMI(){
+    const[height,setHeight]=useState("")
+    const[weight,setWeight]=useState("")
+    const[result,setResult]=useState("")
+    const[remark,setRemark]=useState("")
+    const[message,setMessage]=useState("")
+
+   
+
+    function calculateBmi(e){
+        e.preventDefault()
+        if(weight && height){
+            const heightInMeters=height / 100
+
+            const yourbmi=(weight / (heightInMeters * heightInMeters)).toFixed(1)
+
+            setResult(yourbmi)
+
+                if(yourbmi < 18.0){
+                    setRemark("You are underweight")
+                }
+                else if(yourbmi < 25.0){
+                    setRemark("You are normal weight")
+                }
+                else if(yourbmi < 30){
+                    setRemark("You are overweight")
+                }
+                else{
+                    setRemark("You are obese.")
+                }
+                          
+     }
+       else{
+        setMessage("Please enter your weight and height")
+        }
+        
+
+    }
+
+    return(
+        <section className="bmi-container">
+            <img src={logo} width="100" />
+            <p className="bmi-text-con">BMI CALCULATOR</p>
+            <h2>A little more insight into your health.</h2>
+            <p className="bmi-small-text">Explore your Body Mass index using your height and weight. Get a quick BMI estimate and a general reference to help you
+                better understand your body measurements.
+            </p>
+
+            <form>
+                <h3 className="msg">{message}</h3>
+                <input type="number" placeholder="Your weight in (kg) eg 60" onChange={(e)=>{setWeight(e.target.value)}}/><br />
+                <input type="number" placeholder="Your height in (m) eg 170" onChange={(e)=>{setHeight(e.target.value)}}/><br />
+                <button type="submit" onClick={calculateBmi}>Calculate your BMI</button>
+
+                <p className="result">{result}</p>                             
+                
+                <p className="remark">{remark}</p>
+            </form>
+
+        </section>
+    )
+}
+export default BMI

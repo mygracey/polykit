@@ -1,0 +1,95 @@
+.bmi-container {
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 4rem;
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bmi-container .bmi-text-con {
+    padding: 0.6rem;
+    background: greenyellow;
+    border-radius: 1rem;
+    color: green;
+}
+
+.bmi-container .bmi-small-text {
+    font-size: 0.9rem;
+    color: gray;
+    max-width: 500px;
+    text-align: center;
+}
+
+.bmi-container form {
+    width: 320px;
+    height: fit-content;
+    padding: 2rem;
+    background: green;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bmi-container form input {
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
+.bmi-container form button {
+    width: 100%;
+    height: 2.5rem;
+    background: orange;
+    color: green;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
+.bmi-container form .result {
+    margin-top: 1rem;
+    color: whitesmoke;
+    font-size: 1rem;
+}
+
+.bmi-container form .remark {
+    font-size: 0.9rem;
+    color: white;
+}
+
+.bmi-container form .msg {
+    color: orange;
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* Media Query for Mobile phones*/
+
+@media(max-width:600px) {
+    .bmi-container {
+        max-width: 600px;
+    }
+
+    .bmi-container h2 {
+        text-align: center;
+        max-width: 300px;
+        line-height: 1.2;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .bmi-container .bmi-small-text {
+        max-width: 300px;
+    }
+}

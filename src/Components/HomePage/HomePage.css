@@ -1,0 +1,175 @@
+.homepage {
+    width: 100vw;
+    min-height: 100vh;
+    background: green;
+    box-sizing: border-box;
+}
+
+.homepage .nav {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: green;
+    position: fixed;
+}
+
+.homepage .nav .logo {
+    margin-top: 1rem;
+}
+
+.homepage .nav ul .list {
+    color: white;
+    margin: 2rem;
+    transition: 0.3s ease;
+}
+
+.homepage .nav ul .list:hover {
+    color: yellow;
+    font-size: 1.1rem;
+}
+
+.homepage .nav .homepage-icon {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.homepage .homepage-container {
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    gap: 1rem;
+    padding-top: 6rem;
+}
+
+.homepage .homepage-container h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.homepage .homepage-container .homepage-para {
+    color: silver;
+}
+
+.homepage .homepage-container .left-card {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+
+}
+
+.homepage .homepage-container .left-card .yellow {
+    color: yellow;
+}
+
+.homepage .homepage-container .right-card {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    background: rgb(149, 247, 149);
+    border-radius: 1rem;
+}
+
+.homepage .homepage-container .right-card img {
+    width: 100%;
+
+}
+
+.homepage .left-card .btn-homepage {
+    padding: 1rem 2rem;
+    background: yellow;
+    color: green;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.homepage .left-card .btn-homepage:hover {
+    border: 2px solid yellow;
+    color: yellow;
+    background: transparent;
+}
+
+
+
+/* tablet Responsiveness*/
+
+
+@media(max-width:1024px) {
+    .homepage {
+        max-width: 1024px;
+        height: fit-content;
+    }
+
+    .homepage .nav {
+        max-width: 1024px;
+    }
+
+    .homepage .homepage-container {
+
+        flex-direction: column;
+        height: fit-content;
+        padding-top: 2rem;
+    }
+
+    .homepage .homepage-container .left-card {
+        width: 100%;
+        padding-top: 6rem;
+
+    }
+
+    .homepage .homepage-container .left-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .homepage .homepage-container .left-card .btn-homepage {
+        margin-bottom: 1rem;
+    }
+
+    .homepage .homepage-container .right-card {
+        width: 100%;
+
+    }
+}
+
+
+
+@media(max-width:600px) {
+    .homepage {
+        max-width: 600px;
+    }
+
+    .homepage .nav ul {
+        position: fixed;
+        top: 5rem;
+        right: -200px;
+        background: green;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border: 2px solid rgba(246, 246, 231, 0.199);
+        transition: 0.5s ease;
+    }
+
+    .homepage .nav ul .list {
+        margin: 1rem;
+    }
+
+    .homepage .nav .open {
+        display: block;
+
+    }
+}

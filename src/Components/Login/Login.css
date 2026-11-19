@@ -1,0 +1,98 @@
+.login-container {
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 4rem;
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-container h3 {
+    font-weight: normal;
+}
+
+.login-container p {
+    color: gray;
+}
+
+.login-container p {
+    width: 500px;
+    text-align: center;
+}
+
+.login-container form {
+    width: 400px;
+    height: fit-content;
+    padding: 2rem;
+
+}
+
+.login-container form input {
+    width: 100%;
+    height: 2.5rem;
+    background: #dedada;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.login-container form .form-control {
+    margin-top: 0.5rem;
+
+}
+
+.login-container form button {
+    width: 100%;
+    height: 2.5rem;
+    background: green;
+    color: greenyellow;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+}
+
+.login-container form button:hover {
+    background: greenyellow;
+    color: var(--navbar-background-color)
+}
+
+.login-container form .forgot-password {
+    color: green;
+    text-decoration: underline;
+    cursor: pointer;
+    display: flex;
+    justify-self: end;
+}
+
+.login-container .account-text {
+    margin-left: -5rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: rgb(42, 196, 42);
+}
+
+.login-container .register-link {
+    color: green;
+}
+
+/* Responsive design */
+
+
+@media(max-width:600px) {
+    .login-container {
+        max-width: 600px;
+    }
+
+    .login-container p {
+        max-width: 320px;
+        font-size: 0.8rem;
+    }
+
+    .login-container .account-text {
+        margin-left: 0.5rem;
+    }
+}

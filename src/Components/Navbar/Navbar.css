@@ -1,0 +1,91 @@
+.navbar {
+    position: fixed;
+    width: 100vw;
+    height: 4rem;
+    background: var(--navbar-background-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 100;
+    top: 0;
+
+}
+
+.navbar .loggedinUser {
+    color: white;
+    font-weight: normal;
+}
+
+.navbar .logo img {
+    width: 80px;
+    margin-top: 0.5rem;
+}
+
+.navbar .close {
+    display: none;
+}
+
+.navbar ul {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: fixed;
+    width: 200px;
+    top: 4rem;
+    right: -200px;
+    bottom: 0;
+    background: green;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+
+.navbar ul .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.3s ease;
+
+}
+
+.navbar ul .list p {
+    font-size: 0.9rem;
+    color: white;
+}
+
+
+.navbar ul .list .navbar-icon {
+    font-size: 1.5rem;
+}
+
+.navbar .navbar-bars {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media(max-width:600px) {
+    .navbar {
+        max-width: 600px;
+        padding-right: 10%;
+    }
+
+    .navbar ul {
+        width: 150px;
+    }
+
+    .navbar ul .list p {
+        font-size: 0.8rem;
+    }
+
+    .navbar .loggedinUser {
+        font-size: 0.9rem;
+    }
+}

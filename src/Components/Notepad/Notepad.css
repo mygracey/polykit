@@ -1,0 +1,100 @@
+.notepad-container {
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 4rem;
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.notepad-container .notepad-text-con {
+    padding: 0.5rem;
+    background: greenyellow;
+    color: green;
+    border-radius: 1rem;
+    letter-spacing: 2px;
+}
+
+.notepad-container .notepad-small-text {
+    font-size: 0.9rem;
+    color: gray;
+    max-width: 500px;
+    text-align: center;
+}
+
+.notepad-board {
+    margin-bottom: 1rem;
+    display: none;
+
+}
+
+.notepad-container .note-content {
+    /* width:100%; */
+    width: 600px;
+    min-height: 200px;
+    background: white;
+    border: 1px solid green;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.notepad-container .create-btn {
+    padding: 0.8rem 2rem;
+    background: green;
+    color: greenyellow;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    transition: 0.2s ease-in-out;
+}
+
+.notepad-container .create-btn:hover {
+    background: greenyellow;
+    color: green;
+}
+
+.notepad-container .trash-icon {
+    display: block;
+    display: flex;
+    justify-self: right;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    margin-top: 0.2rem;
+    color: orangered;
+}
+
+
+/* Responsive Design*/
+
+
+@media(max-width:600px) {
+    .notepad-container {
+        max-width: 600px;
+    }
+
+    .notepad-container h2 {
+        max-width: 300px;
+        text-align: center;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .notepad-container .notepad-small-text {
+        max-width: 320px;
+    }
+
+    .notepad-container .create-btn {
+        padding: 0.6rem 1rem;
+    }
+
+    .notepad-container .note-content {
+        max-width: 320px;
+    }
+}

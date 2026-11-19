@@ -1,0 +1,182 @@
+.dashboard {
+    flex: 1;
+    min-height: calc(100vh - 8rem);
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5rem;
+}
+
+
+.dashboard p {
+    color: gray;
+}
+
+.dashboard .toolkit-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+
+.dashboard .toolkit-wrapper .card {
+    min-height: 150px;
+    background: white;
+    padding: 2rem;
+    box-shadow: var(--box-shadow-color);
+    border-radius: 1rem;
+    transition: 0.2s ease;
+    font-size: 1rem;
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(1) .dash-link {
+    color: green;
+    display: block;
+    font-size: 0.9em;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(2) .dash-link {
+    color: orangered;
+    display: block;
+    font-size: 0.9em;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(3) .dash-link {
+    color: rgb(219, 186, 4);
+    ;
+    display: block;
+    font-size: 0.9em;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(4) .dash-link {
+    color: rgb(219, 186, 4);
+    display: block;
+    font-size: 0.9em;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(5) .dash-link {
+    color: green;
+    display: block;
+    font-size: 0.9em;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+
+.dashboard .toolkit-wrapper .card:hover {
+    box-shadow: var(--hover-box-shadow);
+    background: rgb(244, 240, 240);
+    border: 2px solid rgba(117, 110, 110, 0.4);
+}
+
+.dashboard .toolkit-wrapper .card .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+
+}
+
+.dashboard .toolkit-wrapper .card .icon .fa {
+    font-size: 1.8rem;
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(1) .icon {
+    background: greenyellow;
+    width: 50px;
+    height: 50px;
+    color: white;
+
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(2) .icon {
+    background: tomato;
+    width: 50px;
+    height: 50px;
+    color: white;
+
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(3) .icon {
+    background: gold;
+    width: 50px;
+    height: 50px;
+    color: white;
+
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(4) .icon {
+    background: gold;
+    width: 50px;
+    height: 50px;
+    color: white;
+
+}
+
+.dashboard .toolkit-wrapper .card:nth-child(5) .icon {
+    background: greenyellow;
+    width: 50px;
+    height: 50px;
+    color: white;
+
+}
+
+@media(max-width:1000px) {
+
+    .dashboard .toolkit-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .dashboard p {
+        text-align: left;
+
+    }
+
+}
+
+@media(max-width:600px) {
+    .dashboard .toolkit-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard h1 {
+        font-size: 1.3rem;
+        max-width: 300px;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .dashboard p {
+        font-size: 0.9rem;
+        max-width: 350px;
+    }
+
+    .dashboard .toolkit-wrapper .card {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .dashboard .toolkit-wrapper .card p {
+        text-align: left;
+    }
+
+}

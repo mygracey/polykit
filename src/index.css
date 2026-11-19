@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  font-family: Poppins;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  border:0;
+  outline:0;
+  text-decoration: none;
+  user-select: none;
+}
+
+:root{
+  --background-color:whitesmoke;
+  --navbar-background-color:green;
+  --secondary-body-text-color:gray;
+  --box-shadow-color:10px 10px 10px rgba(0,0,0,0.4);
+  --card-border-color:rgb(246,244,244);
+  --hover-box-shadow-color:0 0 3px rgba(0,0,0,0.4);
+  --icon-color-1:yellowgreen;
+  --icon-color-2:tomato;
+  --icon-color-3:gold;
+
+}
+
+::-webkit-scrollbar{
+  width: 1px;
+}
+
+.container{
+  padding-left:5%;
+  padding-right:5%;
+}
