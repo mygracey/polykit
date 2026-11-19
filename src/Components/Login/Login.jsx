@@ -85,7 +85,7 @@ useEffect(()=>{
             <label htmlFor="password">Password</label>
             <input type="password" placeholder="Create a password" onChange={(e)=>{setPassword(e.target.value)}}/><br />
           </div>
-          {/* <Link to="/forgotpassword" className="forgot-password">Forgot password?</Link> */}
+          
           
           <button type="submit" onClick={handleLogin}>Sign in to PolyKit</button>
           <p className="account-text">New to PolyKit? Create an account <Link to="/register" className="login-link">Sign up</Link></p>
