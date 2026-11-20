@@ -1,13 +1,14 @@
 import logo from "../../assets/polykit-removebg.png"
 import{Link} from "react-router-dom"
 import {FaBars,FaTimes} from "react-icons/fa"
+import {useState} from "react"
 
 
 import "./Contact.css"
 
 function Contact(){
 
-
+const[result,setResult]=useState("")
 
 function openMenu(){
     const open=document.querySelector('.open')
@@ -31,6 +32,23 @@ function closeMenu(){
 
 }
 
+
+const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append("access_key", "d8791e4c-7cba-4570-8701-2b42d42f6c6e");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    setResult(data.success ? "Success!" : "Error");
+    setTimeout(() => {
+        window.location.reload()
+    }, 3000);
+  };
 
 
 
@@ -66,13 +84,14 @@ function closeMenu(){
            
 
             <div className="right-card">
-                 <form>
-                <input type="text" placeholder="your full name" autoComplete="off" /><br />
-                <input type="text" placeholder="your email address"  autoComplete="off"/><br />
-                <input type="text" placeholder="your mobile number"  autoComplete="off"/><br />
+                 <form onSubmit={onSubmit}>
+                <input type="text" placeholder="your full name" name="name" autoComplete="off" required /><br />
+                <input type="text" placeholder="your email address" name="email"  autoComplete="off" required/><br />
+                <input type="text" placeholder="your mobile number" name="mobile"  autoComplete="off" required/><br />
 
-                <textarea placeholder="Leave a message here..."></textarea>
-                <button>Send my message</button>
+                <textarea placeholder="Leave a message here..." name="message" required></textarea>
+                <button type="submit">Send my message</button>
+                <p>{result}</p>
             </form>
 
             </div>

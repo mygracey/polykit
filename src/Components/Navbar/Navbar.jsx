@@ -2,8 +2,9 @@ import logo from "../../assets/polykit-removebg.png"
 import {Link,useNavigate} from "react-router-dom"
 import {FaBars,FaTimes,FaHome,FaCalculator,FaMoneyBillWave,FaTasks,FaStickyNote,FaWeight,FaSignOutAlt} from "react-icons/fa"
 import {useState,useEffect} from "react"
-import {onAuthStateChanged} from "firebase/auth"
+import {onAuthStateChanged,signOut} from "firebase/auth"
 import {auth} from "../FirebaseConfig.js"
+
 
 
 import "./Navbar.css"
@@ -50,6 +51,13 @@ const[user,setUser]=useState(null)
 
  },[])
    
+
+ function handleSignOut(){
+    signOut(auth)
+    alert("You have successfully signed out")
+    navigate("/")
+
+ }
  
     return (
         <nav className="navbar">
@@ -84,7 +92,7 @@ const[user,setUser]=useState(null)
                     <p>Task manager</p>
                 </Link>
                 <Link to="#" className="list">
-                       <FaSignOutAlt className="navbar-icon"/>
+                       <FaSignOutAlt className="navbar-icon" onClick={handleSignOut}/>
                     <p>Sign out</p>
                 </Link>
             

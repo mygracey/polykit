@@ -1,6 +1,6 @@
 import {FaStickyNote,FaCalculator,FaTasks,FaWeight,FaCoins,FaMoneyBillWave} from "react-icons/fa";
 import {Link,useNavigate} from "react-router-dom";
-import {onAuthStateChanged} from "firebase/auth"
+import {onAuthStateChanged,signOut} from "firebase/auth"
 import {auth} from "../FirebaseConfig.js"
 import {useState,useEffect} from "react"
 import Navbar from "../Navbar/Navbar"
