@@ -1,16 +1,54 @@
 .about {
     width: 100vw;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     padding-top: 2rem;
 }
 
-.about img {
+.about .polykitsuitimage {
     background: rgb(149, 247, 149);
     border-radius: 1rem;
+}
+
+.about-nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 5rem;
+    background: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-nav .logo {
+    margin-top: 1rem;
+}
+
+.about-nav .open {
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: none;
+}
+
+.about-nav .close {
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+.about-nav ul .list {
+    color: white;
+    margin: 2rem;
+    transition: 0.3s ease;
+}
+
+.about-nav ul .list:hover {
+    color: yellow;
+    font-size: 1.1rem;
 }
 
 .about h2 {
@@ -22,31 +60,97 @@
     margin-bottom: 1rem;
 }
 
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 6rem;
+
+}
+
+.about-container .card-left {
+    width: 50%;
+}
+
+.about-container .card-left h3 {
+    color: gray;
+}
+
+.about-container .card-left p {
+    text-align: justify;
+}
+
+.about-container .card-right {
+    width: 50%;
+}
+
 
 /* Mobile Responsiveness*/
+
+@media(max-width:1024px) {
+    .about {
+        max-width: 1024px;
+        height: fit-content;
+    }
+
+    .about-container {
+
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .about-container .card-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .about-container .card-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
 
 @media(max-width:600px) {
     .about {
         max-width: 600px;
     }
 
-    .about img {
-        max-width: 350px;
+    .about-container {
+        margin-bottom: 1rem;
     }
 
-    .about p {
-        font-size: 0.9rem;
-        text-align: justify;
+    .about .about-nav ul {
+        position: fixed;
+        top: 5rem;
+        right: -200px;
+        background: green;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border: 2px solid rgba(246, 246, 231, 0.199);
+        transition: 0.5s ease;
     }
 
-    .about .poly-top {
-        text-align: center;
-        line-height: 1.1;
-        margin-top: 1rem;
+    .about .about-nav ul .list {
+        margin: 1rem;
     }
 
-    .about .poly-below {
-        margin-top: 1rem;
-        text-align: center;
+    .about .about-nav .open {
+        display: block;
+
     }
 }

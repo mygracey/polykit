@@ -1,5 +1,5 @@
 import About from "./Components/About/About"
-
+import Contact from "./Components/Contact/Contact"
 import HomePage from "./Components/HomePage/HomePage"
 import Register from "./Components/Register/Register"
 import Login from "./Components/Login/Login"
@@ -35,6 +35,7 @@ function App(){
         <Route path="/bmiCalculator" element={<BMI/>}/>
         <Route path="/currency" element={<Currency/>}/>
         <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>} />
         <Route path="/tasks" element={<Task/>}/>
         
         <Route path="*" element={<Errorpage/>}/>
