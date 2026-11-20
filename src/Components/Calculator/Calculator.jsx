@@ -49,7 +49,7 @@ function Calculator(){
                 <div className="last-buttons">
                     <input type="button" value="00" onClick={e => setValue(value + e.target.value)}/>
                     <input type="button" value="0" onClick={e => setValue(value + e.target.value)}/>
-                    <input type="button" value="=" className="equalto" onClick={e => setValue(eval(value))}/>
+                    <input type="button" value="=" className="equalto" onClick={e => setValue(eval?.(value))}/>
                     
                 </div>
 
