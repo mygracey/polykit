@@ -45,9 +45,9 @@ const onSubmit = async (event) => {
 
     const data = await response.json();
     setResult(data.success ? "Success!" : "Error");
-    setTimeout(() => {
-        window.location.reload()
-    }, 3000);
+   setTimeout(() => {
+    event.target.reset()
+   }, 3000);
   };
 
 
