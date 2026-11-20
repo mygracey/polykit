@@ -9,6 +9,20 @@
     flex-direction: column;
 }
 
+.bmi-container .dashboard-link {
+    color: green;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 2px solid green;
+
+}
+
+.bmi-container .welcome-text {
+    margin-bottom: 1rem;
+}
+
 .bmi-container .bmi-text-con {
     padding: 0.6rem;
     background: greenyellow;

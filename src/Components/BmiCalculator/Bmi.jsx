@@ -1,15 +1,34 @@
-import {useState} from "react"
+import {useState,useEffect} from "react"
+import {onAuthStateChanged} from "firebase/auth"
+import {auth} from "../FirebaseConfig.js"
 import logo from "../../assets/polykit-removebg.png"
+import {Link,useNavigate} from "react-router-dom";
+import {FaArrowLeft} from "react-icons/fa"
 
 import "./Bmi.css"
 
 function BMI(){
+    const navigate=useNavigate()
+    const[user,setUser]=useState(null)
     const[height,setHeight]=useState("")
     const[weight,setWeight]=useState("")
     const[result,setResult]=useState("")
     const[remark,setRemark]=useState("")
     const[message,setMessage]=useState("")
 
+    useEffect(()=>{
+
+        const unsubscribed=onAuthStateChanged(auth,(currentUser)=>{
+            if(currentUser){
+                setUser(currentUser.displayName)
+                console.log(currentUser.displayName)
+            }
+            else{
+                navigate("/login")
+            }
+        })
+        return ()=>unsubscribed()
+    },[])
    
 
     function calculateBmi(e){
@@ -44,7 +63,9 @@ function BMI(){
 
     return(
         <section className="bmi-container">
+            <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
             <img src={logo} width="100" />
+            <p className="welcome-text">Welcome back {user} !</p>
             <p className="bmi-text-con">BMI CALCULATOR</p>
             <h2>A little more insight into your health.</h2>
             <p className="bmi-small-text">Explore your Body Mass index using your height and weight. Get a quick BMI estimate and a general reference to help you

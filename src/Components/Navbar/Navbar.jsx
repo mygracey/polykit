@@ -53,6 +53,7 @@ const[user,setUser]=useState(null)
  
     return (
         <nav className="navbar">
+           
               <div className="logo"><img src={logo}/></div> 
 
                     <h3 className="loggedinUser">Welcome {user} !</h3>

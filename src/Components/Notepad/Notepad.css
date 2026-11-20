@@ -9,6 +9,25 @@
     flex-direction: column;
 }
 
+.notepad-container .dashboard-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: green;
+    border-bottom: 2px solid green;
+    cursor: pointer;
+
+}
+
+.notepad-container .msg {
+    color: orange;
+}
+
+.notepad-container .welcome-text {
+    margin-top: 1rem;
+}
+
 .notepad-container .notepad-text-con {
     padding: 0.5rem;
     background: greenyellow;
@@ -67,6 +86,23 @@
     cursor: pointer;
     margin-top: 0.2rem;
     color: orangered;
+}
+
+.notepad-container .save-notes-btn {
+    background: orange;
+    padding: 0.8rem 2rem;
+    border-radius: 1rem;
+    border: 0;
+    color: green;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.notepad-container .display-notes {
+    width: 400px;
+    height: fit-content;
+    background: white;
 }
 
 

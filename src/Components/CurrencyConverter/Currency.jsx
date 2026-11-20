@@ -1,4 +1,9 @@
-import {useState} from "react";
+import {useState,useEffect} from "react";
+import {FaArrowLeft} from "react-icons/fa"
+import {onAuthStateChanged} from "firebase/auth"
+import {auth} from "../FirebaseConfig.js"
+import {useNavigate,Link} from "react-router-dom"
+
 
 
 
@@ -7,11 +12,30 @@ import logo from "../../assets/polykit-removebg.png"
 import "./Currency.css"
 
 function Currency(){
-
+const navigate=useNavigate()
+const[user,setUser]=useState(null)
 const[amount,setAmount]=useState("1");
 const[from,setFrom]=useState("USD")
 const[to,setTo]=useState("NGN")
 const[result,setResult]=useState(1450)
+
+
+useEffect(()=>{
+    const unsubscribed=onAuthStateChanged(auth,(currentUser)=>{
+        if(currentUser){
+               setUser(currentUser.displayName)
+               console.log(currentUser.displayName)
+
+        }
+        else{
+            navigate("/login")
+        }
+     
+    })
+
+    return ()=>unsubscribed()
+
+},[])
 
 // Our exchange rates
 
@@ -36,7 +60,9 @@ function convertCurrecncy(e){
 
     return (
         <section className="currency">
-            <img src={logo} width="100"/>
+            <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
+             <img src={logo} width="100"/>
+             <p className="welcome-text">Welcome back {user} !</p>
             <p className="currency-text-con">CURRENCY CONVERTER</p>
             <h2>Make every currency count.</h2>
 

@@ -9,6 +9,17 @@
     flex-direction: column;
 }
 
+.register-container .home-page-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: green;
+    border-bottom: 2px solid green;
+    cursor: pointer;
+
+}
+
 .register-container h3 {
     font-weight: normal;
 }

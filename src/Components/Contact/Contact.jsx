@@ -67,9 +67,9 @@ function closeMenu(){
 
             <div className="right-card">
                  <form>
-                <input type="text" placeholder="your full name" /><br />
-                <input type="text" placeholder="your email address" /><br />
-                <input type="text" placeholder="your mobile number" /><br />
+                <input type="text" placeholder="your full name" autoComplete="off" /><br />
+                <input type="text" placeholder="your email address"  autoComplete="off"/><br />
+                <input type="text" placeholder="your mobile number"  autoComplete="off"/><br />
 
                 <textarea placeholder="Leave a message here..."></textarea>
                 <button>Send my message</button>

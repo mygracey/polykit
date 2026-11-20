@@ -40,6 +40,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 7rem;
+}
+
+.contact-container .left-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.contact-container .right-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .contact p {
@@ -76,6 +92,7 @@
     padding-left: 0.5rem;
     padding-top: 0.5rem;
     font-size: 1rem;
+    border-radius: 1rem;
 }
 
 .contact form input::placeholder {

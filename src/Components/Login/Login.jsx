@@ -2,7 +2,7 @@ import {Link,useNavigate} from "react-router-dom"
 import{signInWithEmailAndPassword,onAuthStateChanged} from "firebase/auth";
 import{useState,useEffect} from "react";
 import{auth} from "../FirebaseConfig.js";
-
+import {FaArrowLeft} from "react-icons/fa"
 
 import logo from "../../assets/polykit-removebg.png"
 
@@ -49,7 +49,7 @@ useEffect(()=>{
             if(user){
               setMessage("Hi " + email + " login successful!")
               setTimeout(()=>{
-                navigate("/")
+                navigate("/dashboard")
               },3000)
             }
             else{
@@ -69,6 +69,7 @@ useEffect(()=>{
     return(
         
       <div className="login-container">
+        <Link to="/" className="home-page-link "><FaArrowLeft/> Return to home page</Link>
         <img src={logo} width="100"/>
         <h2>PolyKit - Login page</h2>
         <h3>{success}</h3>

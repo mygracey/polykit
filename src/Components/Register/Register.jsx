@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import {useState} from "react"
 import {useNavigate} from "react-router-dom"
 import {auth,db} from "../FirebaseConfig.js"
+import {FaArrowLeft} from "react-icons/fa"
 import {createUserWithEmailAndPassword, updateProfile} from "firebase/auth"
 import logo from "../../assets/polykit-removebg.png"
 import "./Register.css"
@@ -54,6 +55,8 @@ function Register(){
 
     return(
           <div className="register-container">
+
+            <Link to="/" className="home-page-link"> <FaArrowLeft/> Return to home page</Link>
 
                 <img src={logo} width="100"/>  
                 <h2>PolyKit - Registration page</h2>

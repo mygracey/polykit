@@ -1,15 +1,51 @@
 import logo from "../../assets/polykit-removebg.png"
-import {useState} from "react"
+import {useState, useEffect} from "react"
+import {onAuthStateChanged} from "firebase/auth"
+import {auth} from "../FirebaseConfig.js"
+import {useNavigate} from "react-router-dom"
+import {FaArrowLeft} from "react-icons/fa"
+import {Link} from "react-router-dom"
+
+
+
+
 import "./Calculator.css"
 
-
 function Calculator(){
+const navigate=useNavigate()
+const[user,setUser]=useState(null)
+
+
+
+
+useEffect(()=>{
+
+    const unsubscribed=onAuthStateChanged(auth,(currentUser)=>{
+        if(currentUser){
+            setUser(currentUser.displayName)
+            console.log(currentUser)
+            
+        }
+        else{
+            navigate("/login")
+        }
+    })
+
+     return ()=>unsubscribed()
+    
+},[])
+
+
+
+
     const[value,setValue]=useState("")
     return(
         <section className="poly-calculator">
+            <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
             <img src={logo} width="100"/>
             <p className="calc-text-con">Calculator</p>
-            <h2>Calculator with confidence.</h2>
+            <p className="welcome-text">Welcome back {user} !</p>
+            <h2>Calculate with confidence.</h2>
             <p className="small-text">
                 Make everything calculations simpler.
                 Perform quick, accurate calculations with a clear and intuitive experience designed to keep things effortless.

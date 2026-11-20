@@ -9,6 +9,19 @@
     flex-direction: column;
 }
 
+.task .dashboard-link {
+    color: green;
+    border-bottom: 2px solid green;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.task .welcome-text {
+    margin-bottom: 1rem;
+}
+
 .task-text-con {
     padding: 0.5rem;
     background: greenyellow;

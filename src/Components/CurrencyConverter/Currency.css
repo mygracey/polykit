@@ -9,6 +9,21 @@
     flex-direction: column;
 }
 
+.currency .dashboard-link {
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: green;
+    border-bottom: 2px solid green;
+}
+
+
+.currency .welcome-text {
+    margin-bottom: 1rem;
+}
+
 .currency .currency-text-con {
     padding: 0.5rem;
     background: greenyellow;
