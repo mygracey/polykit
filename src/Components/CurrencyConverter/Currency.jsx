@@ -1,6 +1,6 @@
 import {useState,useEffect} from "react";
 import {FaArrowLeft} from "react-icons/fa"
-import {onAuthStateChanged} from "firebase/auth"
+import {onAuthStateChanged,signOut} from "firebase/auth"
 import {auth} from "../FirebaseConfig.js"
 import {useNavigate,Link} from "react-router-dom"
 
@@ -58,9 +58,18 @@ function convertCurrecncy(e){
 
 
 
+function handleLogout(){
+    signOut(auth)
+    navigate("/")
+}
+
+
     return (
         <section className="currency">
-            <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
+          <div className="logout_and_return_home">
+                   <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
+                   <button onClick={handleLogout}>Logout</button>
+            </div>
              <img src={logo} width="100"/>
              <p className="welcome-text">Welcome back {user} !</p>
             <p className="currency-text-con">CURRENCY CONVERTER</p>

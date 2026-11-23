@@ -9,6 +9,28 @@
     flex-direction: column;
 }
 
+.logout_and_return_home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logout_and_return_home button {
+    cursor: pointer;
+    padding: 0.6rem 2rem;
+    background: green;
+    color: yellow;
+    border-radius: 1rem;
+    font-size: 1rem;
+    transition: 0.5s ease;
+}
+
+.logout_and_return_home button:hover {
+    background: greenyellow;
+    color: green;
+}
+
 .bmi-container .dashboard-link {
     color: green;
     display: inline-flex;
@@ -28,6 +50,7 @@
     background: greenyellow;
     border-radius: 1rem;
     color: green;
+    margin-bottom: 0.5rem;
 }
 
 .bmi-container .bmi-small-text {

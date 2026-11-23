@@ -4,7 +4,7 @@ import logo from "../../assets/polykit-removebg.png"
 import noteImage from "../../assets/note1-removebg.png"
 import {FaTrash,FaArrowLeft} from "react-icons/fa"
 import {Link,useNavigate} from "react-router-dom"
-import {onAuthStateChanged} from "firebase/auth"
+import {onAuthStateChanged,signOut} from "firebase/auth"
 import {auth,db} from "../FirebaseConfig.js"
 import {push,ref,set,serverTimestamp,onValue} from "firebase/database"
 
@@ -21,14 +21,14 @@ function Notepad(){
     const navigate=useNavigate()
     const[user,setUser]=useState(null)
     const[notes,setNotes]=useState("")
-    const[noteList,setNoteList]=useState({})
+    const[noteList,setNoteList]=useState([])
 
     useEffect(()=>{
         const unsubscribed=onAuthStateChanged(auth,(currentUser)=>{
 
             if(currentUser){
                 setUser(currentUser.displayName)
-                console.log(user)
+                console.log(currentUser.displayName)
             }
 
             else{
@@ -65,7 +65,7 @@ function Notepad(){
         const newNote=push(noteDbRef)
 
      set(newNote,{
-        note:notes,
+        content:notes,
         createdAt:Date.now()
            
      })
@@ -83,26 +83,46 @@ function Notepad(){
 
         const noteDbRef=ref(db,`polykitdb/${user}/notes`)
 
-        const unsubscribed=onValue(noteDbRef,(snapshot)=>{
+        onValue(noteDbRef,(snapshot)=>{
             
-                const data=snapshot.val()
-                
-              
-               setNoteList(data)
-               
+              const data=snapshot.val();
+
+              if(data){
+                const saveNotes=Object.entries(data).map(([id,value])=>({
+                    id:id,
+                    ...value
+                })
+            );
+            setNoteList(saveNotes)
+            console.log("this is great")
+
+
+              }else{
+                setNoteList([])
+              }
+
+
+
+
                  
         })
 
-        return ()=>unsubscribed()
+    
 
     },[])
 
 
-
+function handleLogout(){
+    signOut(auth)
+    navigate("/")
+}
 
     return (
         <section className="notepad-container">
-             <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
+            <div className="logout_and_return_home">
+                   <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
+                   <button onClick={handleLogout}>Logout</button>
+            </div>
             <img src={logo} width="100"/>
             <p className="notepad-text-con">NOTEPAD</p>
             <p className="welcome-text">Welcome back {user} !</p>
@@ -126,10 +146,17 @@ function Notepad(){
             <button className="save-notes-btn" onClick={saveNotes}>Save notes</button>
 
             <div className="display-notes">
-            
-            {Object.entries(noteList).map(([id,value])=>{
+               {noteList.map((item)=>{
+                return(
+                     <ul>
+                    <li key={item.id}>
+                        <p>{item.content}</p>
+                    </li>
+                </ul>
                 
-            })}
+                )
+               
+               })}
             </div>
 
         </section>

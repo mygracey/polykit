@@ -29,7 +29,7 @@ useEffect(()=>{
             
         }
         else{
-          setError("Please sign Up!")
+          setError("Please sign in!")
         }
    })
 },[])

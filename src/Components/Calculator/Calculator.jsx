@@ -1,6 +1,6 @@
 import logo from "../../assets/polykit-removebg.png"
 import {useState, useEffect} from "react"
-import {onAuthStateChanged} from "firebase/auth"
+import {onAuthStateChanged,signOut} from "firebase/auth"
 import {auth} from "../FirebaseConfig.js"
 import {useNavigate} from "react-router-dom"
 import {FaArrowLeft} from "react-icons/fa"
@@ -36,12 +36,19 @@ useEffect(()=>{
 },[])
 
 
-
+function handleLogout(){
+    signOut(auth)
+    navigate("/")
+}
 
     const[value,setValue]=useState("")
     return(
         <section className="poly-calculator">
-            <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
+            <div className="logout_and_return_home">
+                   <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
+                   <button onClick={handleLogout}>Logout</button>
+            </div>
+         
             <img src={logo} width="100"/>
             <p className="calc-text-con">Calculator</p>
             <p className="welcome-text">Welcome back {user} !</p>

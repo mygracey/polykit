@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react"
-import {onAuthStateChanged} from "firebase/auth"
+import {onAuthStateChanged,signOut} from "firebase/auth"
 import {auth} from "../FirebaseConfig.js"
 import logo from "../../assets/polykit-removebg.png"
 import {Link,useNavigate} from "react-router-dom";
@@ -61,9 +61,19 @@ function BMI(){
 
     }
 
+
+    function handleLogout(){
+        signOut(auth)
+        navigate("/")
+    }
+
     return(
         <section className="bmi-container">
-            <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
+            <div className="logout_and_return_home">
+                 <Link to="/dashboard" className="dashboard-link"><FaArrowLeft/> Return to dashboard</Link>
+                 <button onClick={handleLogout}>Logout</button>
+            </div>
+           
             <img src={logo} width="100" />
             <p className="welcome-text">Welcome back {user} !</p>
             <p className="bmi-text-con">BMI CALCULATOR</p>
